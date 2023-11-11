@@ -9,6 +9,12 @@
       <img :src="image.url" alt="Image" />
       <p class="Title titlefont">{{ image.title }}</p>
     </div>
+    <Fullscreenviewer
+      v-if="isFullViewerOpen"
+      :selectedImage="selectedImage"
+      :type="type"
+      @close="closeFullViewer"
+    />
   </div>
 </template>
 
@@ -31,6 +37,7 @@ export default {
   methods: {
     openFullViewer(image) {
       this.selectedImage = image;
+
       this.isFullViewerOpen = true;
     },
     closeFullViewer() {

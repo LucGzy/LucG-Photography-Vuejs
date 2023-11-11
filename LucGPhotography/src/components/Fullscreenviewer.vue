@@ -1,14 +1,19 @@
 <template>
   <div class="image-viewer" @click="closeViewer">
-    <img :src="selectedImage.url" alt="Full-Screen Image" />
+    <img :src="selectedImage.url" :class="type" alt="Full-Screen Image" />
     <button class="close-button" @click="closeViewer">Close</button>
   </div>
 </template>
 
 <script>
+import { onMounted } from "vue";
 export default {
+  onMounted() {
+    console.log("fullviewer");
+  },
   props: {
     selectedImage: Object, // The selected image object to display
+    type: String,
   },
   methods: {
     closeViewer() {
@@ -29,14 +34,16 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  z-index: 1000;
 }
 
 img {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 90%;
+  max-height: 85%;
 }
-
+.portrait {
+  max-height: 80%;
+}
 .close-button {
   position: absolute;
   top: 20px;

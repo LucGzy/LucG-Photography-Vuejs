@@ -48,7 +48,6 @@ export default {
       axios
         .get("/src/imggrid.json")
         .then((response) => {
-          console.log(response.data);
           this.grid1Images = response.data; // Update grid1Images
         })
         .catch((error) => {
@@ -59,7 +58,6 @@ export default {
       axios
         .get("/src/imggridpano.json")
         .then((response) => {
-          console.log(response.data);
           this.grid2Images = response.data; // Update grid2Images
         })
         .catch((error) => {
@@ -70,7 +68,6 @@ export default {
       axios
         .get("/src/imggridportrait.json")
         .then((response) => {
-          console.log(response.data);
           this.grid3Images = response.data; // Update grid3Images
         })
         .catch((error) => {
