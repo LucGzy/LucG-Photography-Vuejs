@@ -1,40 +1,20 @@
 <script>
 import Navbar from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
-import PhotoDisplay from "./components/Photodisplay.vue";
+
 import ProductDisplay from "./components/Productdisplay.vue";
 import Aboutme from "./components/Aboutme.vue";
 
 import axios from "axios";
+import GridCombined from "./components/GridCombined.vue";
 
 export default {
   components: {
     Navbar,
     Footer,
-    PhotoDisplay,
     ProductDisplay,
     Aboutme,
-  },
-  data() {
-    return {
-      imageData: [],
-    };
-  },
-  created() {
-    this.loadImageData();
-  },
-  methods: {
-    loadImageData() {
-      axios
-        .get("/src/imggrid.json")
-        .then((response) => {
-          console.log(response.data);
-          this.imageData = response.data;
-        })
-        .catch((error) => {
-          console.error("Error loading image data:", error);
-        });
-    },
+    GridCombined,
   },
 };
 </script>
@@ -43,7 +23,7 @@ export default {
   <Navbar />
   <div class="innerbody">
     <section class="Photos">
-      <PhotoDisplay :images="imageData" />
+      <GridCombined />
     </section>
 
     <section class="Products">

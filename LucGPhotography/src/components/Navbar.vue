@@ -7,7 +7,12 @@
       class="Navbartext font"
       >Instagram</a
     >
-    <a class="Navbartext font">Photos</a>
+    <select class="Navbartext font" id="dropdownnav">
+      <option value="">Navigate Sections Here</option>
+      <option value="#normal">Landscape</option>
+      <option value="#pano">Panorama</option>
+      <option value="#portrait">Portrait</option>
+    </select>
     <a class="Navbartext font">Products</a>
     <a class="Navbartext font">About</a>
     <a class="Navbartext font">Contact</a>
@@ -15,11 +20,36 @@
 </template>
 
 <script>
+import { onMounted } from "vue";
+
 export default {
   name: "Navbar",
+
+  setup() {
+    onMounted(() => {
+      const sectionDropdown = document.getElementById("dropdownnav");
+
+      // Add an event listener to the dropdown
+      sectionDropdown.addEventListener("change", function () {
+        // Get the selected option's value
+        const selectedValue = sectionDropdown.value;
+
+        // Check if a section is selected
+        if (selectedValue) {
+          // Scroll to the selected section
+          window.location.href = selectedValue;
+        }
+      });
+    });
+
+    // Other setup code if needed
+
+    return {};
+  },
 };
 </script>
 
 <style scoped>
-/* Add component-specific styles here */
+#dropdownnav {
+}
 </style>

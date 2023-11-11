@@ -1,21 +1,49 @@
 <template>
   <div class="image-grid">
-    <div class="image" v-for="(image, index) in images" :key="index">
+    <div
+      :class="['image', type]"
+      v-for="(image, index) in images"
+      :key="index"
+      @click="openFullViewer(image)"
+    >
       <img :src="image.url" alt="Image" />
-      <p class="Title">{{ image.title }}</p>
+      <p class="Title titlefont">{{ image.title }}</p>
     </div>
   </div>
 </template>
 
 <script>
+import Fullscreenviewer from "./Fullscreenviewer.vue";
 export default {
   props: {
-    images: Array, // This prop will receive the array of image objects from your JSON file
+    images: Array,
+    type: String, // This prop will receive the array of image objects from your JSON file
+  },
+  components: {
+    Fullscreenviewer, // Register the FullViewer component
+  },
+  data() {
+    return {
+      selectedImage: null,
+      isFullViewerOpen: false,
+    };
+  },
+  methods: {
+    openFullViewer(image) {
+      this.selectedImage = image;
+      this.isFullViewerOpen = true;
+    },
+    closeFullViewer() {
+      this.isFullViewerOpen = false;
+    },
   },
 };
 </script>
 
 <style scoped>
+.titlefont {
+  font-family: "Roboto Condensed", sans-serif;
+}
 .Title {
   width: 100%;
 }
@@ -25,6 +53,7 @@ export default {
   align-items: center;
   justify-content: center;
   text-align: center;
+  border: 1px solid gray;
 }
 .image-grid {
   margin-top: 70px;
@@ -59,5 +88,13 @@ img {
   height: 100%;
   object-fit: cover;
   background-color: lightgray;
+}
+.pano {
+  width: 98%;
+}
+
+.portrait {
+  width: 17%;
+  height: 550px;
 }
 </style>
