@@ -63,7 +63,7 @@ export default {
       }
 
       for (const element of imagecontainer) {
-        element.style.borderColor = isNightMode.value ? "#1f1d1d" : "lightgray";
+        element.style.borderColor = isNightMode.value ? "#1f1d1d" : "gray";
       }
 
       for (const element of nightmodebutton) {

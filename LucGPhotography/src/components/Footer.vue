@@ -1,20 +1,34 @@
 <template>
-  <div>
-    <h1>{{ greeting }}</h1>
+  <div class="footer-container">
+    <div class="footer-box">
+      <font-awesome-icon class="iconfooter" :icon="['fas', 'at']" />
+      <p class="font">lucgphotography@gmail.com</p>
+    </div>
   </div>
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      greeting: "Hello, Vue.js!",
-    };
-  },
-  // You can add more component options here, like methods, computed properties, etc.
-};
+export default {};
 </script>
 
 <style scoped>
-/* Add component-specific styles here */
+.footer-container {
+  margin-top: 70px;
+  padding: 4%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: lightgray;
+  border-radius: 50px;
+}
+.footer-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.iconfooter {
+  margin-right: 5px;
+}
 </style>
