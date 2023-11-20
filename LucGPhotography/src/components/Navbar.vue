@@ -34,17 +34,18 @@ export default {
     onMounted(() => {
       const sectionDropdown = document.getElementById("dropdownnav");
 
-      // Add an event listener to the dropdown
-      sectionDropdown.addEventListener("change", function () {
-        // Get the selected option's value
-        const selectedValue = sectionDropdown.value;
+      if (sectionDropdown) {
+        sectionDropdown.addEventListener("change", function () {
+          // Get the selected option's value
+          const selectedValue = sectionDropdown.value;
 
-        // Check if a section is selected
-        if (selectedValue) {
-          // Scroll to the selected section
-          window.location.href = selectedValue;
-        }
-      });
+          // Check if a section is selected
+          if (selectedValue) {
+            // Scroll to the selected section
+            window.location.href = selectedValue;
+          }
+        });
+      }
     });
 
     const nightmode = () => {
