@@ -1,6 +1,6 @@
 <template>
   <div class="Navbar">
-    <a class="navelement Navbartext font">Luc Gouzy</a>
+    <router-link to="/" class="navelement Navbartext font">Home</router-link>
     <a
       href="https://www.instagram.com/lucg.photography/"
       target="_blank"
@@ -8,12 +8,14 @@
       >Instagram</a
     >
     <select class="navelement Navbartext font" id="dropdownnav">
-      <option value="">Navigate Sections Here</option>
+      <option value="" disabled selected>Navigate Sections Here</option>
       <option value="#normal">Landscape</option>
       <option value="#pano">Panorama</option>
       <option value="#portrait">Portrait</option>
     </select>
-    <a class="navelement Navbartext font">Products</a>
+    <router-link to="/products" class="navelement Navbartext font"
+      >Products</router-link
+    >
     <a class="navelement Navbartext font">About</a>
     <a class="navelement Navbartext font">Contact</a>
     <button class="Navbartext font nightmode" @click="nightmode">
@@ -56,6 +58,7 @@ export default {
       const nightmodebutton = document.getElementsByClassName("nightmode");
       const imagecontainer = document.getElementsByClassName("image");
       const navelement = document.getElementsByClassName("navelement");
+      const footer = document.getElementsByClassName("footer-container");
 
       for (const element of imagegrid) {
         element.style.backgroundColor = isNightMode.value
@@ -74,6 +77,12 @@ export default {
         element.style.color = isNightMode.value ? "black" : "white";
       }
       for (const element of navelement) {
+        element.style.backgroundColor = isNightMode.value
+          ? "#1f1d1d"
+          : "lightgray";
+        element.style.color = isNightMode.value ? "white" : "black";
+      }
+      for (const element of footer) {
         element.style.backgroundColor = isNightMode.value
           ? "#1f1d1d"
           : "lightgray";
@@ -98,11 +107,16 @@ export default {
 .nightmode {
   background-color: #1f1d1d;
   color: white;
+  border-top: none;
+  border-left: none;
+  height: 52px;
 }
 .Navbar {
   z-index: 10000;
 }
 #dropdownnav {
-  /* Add your dropdown styles here if needed */
+  border-top: none;
+  border-left: none;
+  height: 52px;
 }
 </style>
