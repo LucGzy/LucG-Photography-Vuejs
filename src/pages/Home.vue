@@ -5,10 +5,29 @@ import Footer from "../components/Footer.vue";
 import ProductDisplay from "../components/Productdisplay.vue";
 import Aboutme from "../components/Aboutme.vue";
 
-import axios from "axios";
 import GridCombined from "../components/GridCombined.vue";
+import { onMounted } from "vue";
 
 export default {
+  setup() {
+    onMounted(() => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          console.log(entry);
+          console.log(entry.target.classList, entry.isIntersecting);
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      });
+
+      const hiddenElements = document.querySelectorAll(".hidden");
+      console.log(hiddenElements);
+      if (hiddenElements) {
+        hiddenElements.forEach((el) => observer.observe(el));
+      }
+    });
+  },
   components: {
     Navbar,
     Footer,
@@ -20,13 +39,13 @@ export default {
 </script>
 
 <template>
-  <Navbar />
+  <Navbar class="hidden" />
   <div class="innerbody">
-    <section class="Photos">
+    <section class="Photos hidden">
       <GridCombined />
     </section>
 
-    <Footer />
+    <Footer class="hidden" />
   </div>
 </template>
 

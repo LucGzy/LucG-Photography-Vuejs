@@ -4,19 +4,19 @@
       <Photodisplay
         :images="grid1Images"
         type="normal"
-        class="boxshadow"
+        class="boxshadow hidden"
         id="normal"
       />
       <Photodisplay
         :images="grid2Images"
         type="pano"
-        class="boxshadow"
+        class="boxshadow hidden"
         id="pano"
       />
       <Photodisplay
         :images="grid3Images"
         type="portrait"
-        class="boxshadow"
+        class="boxshadow hidden"
         id="portrait"
       />
     </div>
@@ -25,9 +25,29 @@
 
 <script>
 import Photodisplay from "./Photodisplay.vue";
+import { onMounted } from "vue";
 import axios from "axios"; // Import Axios
 
 export default {
+  setup() {
+    onMounted(() => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          console.log(entry);
+          console.log(entry.target.classList, entry.isIntersecting);
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      });
+
+      const hiddenElements = document.querySelectorAll(".hidden");
+      console.log(hiddenElements);
+      if (hiddenElements) {
+        hiddenElements.forEach((el) => observer.observe(el));
+      }
+    });
+  },
   components: {
     Photodisplay,
   },
