@@ -39,13 +39,19 @@ export default {
 </script>
 
 <template>
-  <Navbar class="hidden" />
-  <div class="innerbody">
-    <section class="Photos hidden">
-      <GridCombined />
-    </section>
+  <nav>
+    <Navbar class="hidden" />
+  </nav>
 
-    <Footer class="hidden" />
+  <div class="innerbody">
+    <main>
+      <section class="Photos hidden">
+        <GridCombined />
+      </section>
+    </main>
+    <footer>
+      <Footer class="hidden" />
+    </footer>
   </div>
 </template>
 
