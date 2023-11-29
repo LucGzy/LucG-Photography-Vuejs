@@ -93,7 +93,7 @@ img {
   vertical-align: bottom;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
   background-color: lightgray;
 }
 .pano {
@@ -101,7 +101,7 @@ img {
 }
 
 .portrait {
-  width: 17%;
+  width: 23%;
   height: 550px;
 }
 </style>
