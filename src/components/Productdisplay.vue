@@ -4,22 +4,22 @@
     <div class="product-example">
       <h2 class="font">30x20</h2>
 
-      <img class="product-example-image" src="/img/DSC_0001.jpg" />
+      <img class="product-example-image" src="/img/The Eye.jpg" />
     </div>
     <div class="product-example">
       <h2 class="font">30x20</h2>
 
-      <img class="product-example-image" src="/img/DSC_0001.jpg" />
+      <img class="product-example-image" src="/img/The Eye.jpg" />
     </div>
     <div class="product-example">
       <h2 class="font">30x20</h2>
 
-      <img class="product-example-image" src="/img/DSC_0001.jpg" />
+      <img class="product-example-image" src="/img/The Eye.jpg" />
     </div>
     <div class="product-example">
       <h2 class="font">30x20</h2>
 
-      <img class="product-example-image" src="/img/DSC_0001.jpg" />
+      <img class="product-example-image" src="/img/The Eye.jpg" />
     </div>
   </div>
 </template>
