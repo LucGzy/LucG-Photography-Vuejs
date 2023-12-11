@@ -11,7 +11,7 @@ def format_files_to_json(folder_path):
     for filename in file_list:
         if os.path.isfile(os.path.join(folder_path, filename)):
             file_path = os.path.join(folder_path, filename)
-            url = f"./img/{filename}"
+            url = f"/LucG-Photography-Vuejs/img/{filename}"
             title = os.path.splitext(filename)[0]
             
             data.append({
