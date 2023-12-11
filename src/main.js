@@ -17,7 +17,7 @@ const router = createRouter({
   history: createWebHistory("/LucG-Photography-Vuejs/"),
   routes: [
     { path: "/", component: Home },
-    { path: "/LucG-Photography-Vuejs/products", component: Products },
+    { path: "/products", component: Products },
   ],
 });
 app.use(router);
