@@ -19,8 +19,10 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
-  routes,
+  history: createWebHistory("/LucG-Photography-Vuejs/"),
+  routes: [
+    // put your routes
+  ],
 });
 app.use(router);
 app.component("font-awesome-icon", FontAwesomeIcon);
