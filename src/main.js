@@ -13,15 +13,11 @@ import Products from "./pages/Products.vue";
 const app = createApp(App);
 library.add(faAt);
 
-const routes = [
-  { path: "/", component: Home },
-  { path: "/products", component: Products },
-];
-
 const router = createRouter({
   history: createWebHistory("/LucG-Photography-Vuejs/"),
   routes: [
-    // put your routes
+    { path: "/", component: Home },
+    { path: "/LucG-Photography-Vuejs/products", component: Products },
   ],
 });
 app.use(router);

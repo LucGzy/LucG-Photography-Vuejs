@@ -20,7 +20,7 @@ export default {
       });
 
       const hiddenElements = document.querySelectorAll(".hidden");
-      console.log(hiddenElements);
+
       if (hiddenElements) {
         hiddenElements.forEach((el) => observer.observe(el));
       }
