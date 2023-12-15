@@ -17,7 +17,7 @@
       >Products</router-link
     >
     <a class="navelement Navbartext font">About</a>
-    <a class="navelement Navbartext font">Contact</a>
+    <a class="navelement Navbartext font" href="#contact">Contact</a>
     <button class="Navbartext font nightmode" @click="nightmode">
       {{ lightnightvalue }}
     </button>

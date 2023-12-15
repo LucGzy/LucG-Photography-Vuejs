@@ -26,10 +26,15 @@ export default {
 <style scoped>
 .image-viewer {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+
+  float: left;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
   height: 100%;
+  width: 100%;
+
   background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;

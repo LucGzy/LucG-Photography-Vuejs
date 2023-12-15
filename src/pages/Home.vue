@@ -1,10 +1,9 @@
 <script>
 import Navbar from "../components/Navbar.vue";
 import Footer from "../components/Footer.vue";
-
 import ProductDisplay from "../components/Productdisplay.vue";
 import Aboutme from "../components/Aboutme.vue";
-
+import Fullscreenviewer from "../components/Fullscreenviewer.vue";
 import GridCombined from "../components/GridCombined.vue";
 import { onMounted } from "vue";
 
@@ -32,6 +31,23 @@ export default {
     ProductDisplay,
     Aboutme,
     GridCombined,
+    Fullscreenviewer,
+  },
+  data() {
+    return {
+      selectedImage: null,
+      isFullViewerOpen: false,
+    };
+  },
+  methods: {
+    openFullViewer(image) {
+      this.selectedImage = image;
+
+      this.isFullViewerOpen = true;
+    },
+    closeFullViewer() {
+      this.isFullViewerOpen = false;
+    },
   },
 };
 </script>
@@ -40,11 +56,16 @@ export default {
   <nav>
     <Navbar class="hidden" />
   </nav>
-
+  <Fullscreenviewer
+    v-if="isFullViewerOpen"
+    :selectedImage="selectedImage"
+    :type="type"
+    @close="closeFullViewer"
+  />
   <div class="innerbody">
     <main>
       <section class="Photos hidden">
-        <GridCombined />
+        <GridCombined @open-fullviewer="openFullViewer" />
       </section>
     </main>
     <footer>

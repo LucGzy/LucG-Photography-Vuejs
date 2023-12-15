@@ -1,6 +1,6 @@
 <template>
   <div class="footer-container">
-    <div class="footer-box">
+    <div id="contact" class="footer-box">
       <font-awesome-icon class="iconfooter" :icon="['fas', 'at']" />
       <p class="font">lucgphotography@gmail.com</p>
     </div>

@@ -9,12 +9,6 @@
       <img :src="image.url" alt="Image" />
       <p class="Title titlefont">{{ image.title }}</p>
     </div>
-    <Fullscreenviewer
-      v-if="isFullViewerOpen"
-      :selectedImage="selectedImage"
-      :type="type"
-      @close="closeFullViewer"
-    />
   </div>
 </template>
 
@@ -23,25 +17,13 @@ import Fullscreenviewer from "./Fullscreenviewer.vue";
 export default {
   props: {
     images: Array,
-    type: String, // This prop will receive the array of image objects from your JSON file
+    type: String,
   },
-  components: {
-    Fullscreenviewer, // Register the FullViewer component
-  },
-  data() {
-    return {
-      selectedImage: null,
-      isFullViewerOpen: false,
-    };
-  },
+
+ 
   methods: {
     openFullViewer(image) {
-      this.selectedImage = image;
-
-      this.isFullViewerOpen = true;
-    },
-    closeFullViewer() {
-      this.isFullViewerOpen = false;
+      this.$emit("open-fullviewer", image);
     },
   },
 };
@@ -93,7 +75,7 @@ img {
   vertical-align: bottom;
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: cover;
   background-color: lightgray;
 }
 .pano {

@@ -6,18 +6,21 @@
         type="normal"
         class="boxshadow hidden"
         id="normal"
+        @open-fullviewer="handleOpenFullViewer"
       />
       <Photodisplay
         :images="grid2Images"
         type="pano"
         class="boxshadow hidden"
         id="pano"
+        @open-fullviewer="handleOpenFullViewer"
       />
       <Photodisplay
         :images="grid3Images"
         type="portrait"
         class="boxshadow hidden"
         id="portrait"
+        @open-fullviewer="handleOpenFullViewer"
       />
     </div>
   </div>
@@ -62,9 +65,13 @@ export default {
     this.loadGrid3Images();
   },
   methods: {
+    handleOpenFullViewer(image) {
+      this.$emit("open-fullviewer", image);
+    },
     loadGrid1Images() {
       axios
-        .get("./imggrid.json")
+        // .get("./imggrid.json")
+        .get("/imggrid.json")
         .then((response) => {
           this.grid1Images = response.data; // Update grid1Images
         })
@@ -74,7 +81,8 @@ export default {
     },
     loadGrid2Images() {
       axios
-        .get("./imggridpano.json")
+        // .get("./imggridpano.json")
+        .get("/imggridpano.json")
         .then((response) => {
           this.grid2Images = response.data; // Update grid2Images
         })
@@ -84,7 +92,8 @@ export default {
     },
     loadGrid3Images() {
       axios
-        .get("./imggridportrait.json")
+        // .get("./imggridportrait.json")
+        .get("/imggridportrait.json")
         .then((response) => {
           this.grid3Images = response.data; // Update grid3Images
         })
