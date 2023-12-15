@@ -70,8 +70,10 @@ export default {
     },
     loadGrid1Images() {
       axios
-        // .get("./imggrid.json")
-        .get("/imggrid.json")
+        // for build use this :
+        .get("./imggrid.json")
+        // for dev use this :
+        // .get("/imggrid.json")
         .then((response) => {
           this.grid1Images = response.data; // Update grid1Images
         })
@@ -81,8 +83,10 @@ export default {
     },
     loadGrid2Images() {
       axios
-        // .get("./imggridpano.json")
-        .get("/imggridpano.json")
+        // for build use this :
+        .get("./imggridpano.json")
+        // for dev use this :
+        // .get("/imggridpano.json")
         .then((response) => {
           this.grid2Images = response.data; // Update grid2Images
         })
@@ -92,8 +96,10 @@ export default {
     },
     loadGrid3Images() {
       axios
-        // .get("./imggridportrait.json")
-        .get("/imggridportrait.json")
+        // for build use this :
+        .get("./imggridportrait.json")
+        // for build use this :
+        // .get("/imggridportrait.json")
         .then((response) => {
           this.grid3Images = response.data; // Update grid3Images
         })
