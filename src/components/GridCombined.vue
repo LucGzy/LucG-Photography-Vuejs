@@ -86,7 +86,7 @@ export default {
         // for build use this :
         .get("./imggridpano.json")
         // for dev use this :
-        // .get("/imggridpano.json")
+        .get("/imggridpano.json")
         .then((response) => {
           this.grid2Images = response.data; // Update grid2Images
         })

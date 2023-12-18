@@ -5,6 +5,7 @@ import ProductDisplay from "../components/Productdisplay.vue";
 import Aboutme from "../components/Aboutme.vue";
 import Fullscreenviewer from "../components/Fullscreenviewer.vue";
 import GridCombined from "../components/GridCombined.vue";
+import ScreenSizeWarningPopup from "../components/ScreenSizeWarningPopup.vue";
 import { onMounted } from "vue";
 
 export default {
@@ -32,6 +33,7 @@ export default {
     Aboutme,
     GridCombined,
     Fullscreenviewer,
+    ScreenSizeWarningPopup,
   },
   data() {
     return {
@@ -56,6 +58,7 @@ export default {
   <nav>
     <Navbar class="hidden" />
   </nav>
+  <ScreenSizeWarningPopup />
   <Fullscreenviewer
     v-if="isFullViewerOpen"
     :selectedImage="selectedImage"

@@ -13,14 +13,12 @@
 </template>
 
 <script>
-import Fullscreenviewer from "./Fullscreenviewer.vue";
 export default {
   props: {
     images: Array,
     type: String,
   },
 
- 
   methods: {
     openFullViewer(image) {
       this.$emit("open-fullviewer", image);
@@ -85,5 +83,15 @@ img {
 .portrait {
   width: 23%;
   height: 550px;
+}
+@media screen and (max-width: 1300px) {
+  .image {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .image {
+    width: 80%;
+  }
 }
 </style>
