@@ -1,11 +1,11 @@
 # What is this project ?
 
-This project is a photography website presenting my work.
+This project is a photography website presenting my photography work.
 
 
 # Is it complete ?
 
-I am still developping this website, i published it for demonstration purposes but it is not done yet.
+I am still developping this website, i published it for demonstration purposes but it is not done yet, (mostly the product page which still has placeholders).
 
 # Contact me !
 
