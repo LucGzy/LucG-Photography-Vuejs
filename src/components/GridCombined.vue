@@ -97,9 +97,9 @@ export default {
     loadGrid3Images() {
       axios
         // for build use this :
-        // .get("./imggridportrait.json")
-        // for build use this :
-        .get("/imggridportrait.json")
+        .get("./imggridportrait.json")
+        // for dev use this :
+        // .get("/imggridportrait.json")
         .then((response) => {
           this.grid3Images = response.data; // Update grid3Images
         })
