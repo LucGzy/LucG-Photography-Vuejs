@@ -86,7 +86,7 @@ export default {
         // for build use this :
         .get("./imggridpano.json")
         // for dev use this :
-        .get("/imggridpano.json")
+        // .get("/imggridpano.json")
         .then((response) => {
           this.grid2Images = response.data; // Update grid2Images
         })
@@ -97,9 +97,9 @@ export default {
     loadGrid3Images() {
       axios
         // for build use this :
-        .get("./imggridportrait.json")
+        // .get("./imggridportrait.json")
         // for build use this :
-        // .get("/imggridportrait.json")
+        .get("/imggridportrait.json")
         .then((response) => {
           this.grid3Images = response.data; // Update grid3Images
         })
