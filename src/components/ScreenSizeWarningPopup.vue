@@ -62,7 +62,7 @@ export default {
   animation: popupdisappear 8s forwards;
 }
 img {
-  width: 30px;
+  width: 40%;
 }
 @keyframes popupdisappear {
   0% {
