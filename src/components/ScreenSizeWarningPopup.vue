@@ -63,7 +63,6 @@ export default {
 }
 
 p {
-  display: flex;
   font-size: small;
 }
 img {
