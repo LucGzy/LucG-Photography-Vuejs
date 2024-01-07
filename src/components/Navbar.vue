@@ -8,7 +8,7 @@
       >Instagram</a
     >
     <select class="navelement Navbartext font" id="dropdownnav">
-      <option value="" disabled selected>Navigate Sections Here</option>
+      <option value="" disabled selected>Navigate</option>
       <option value="#normal">Landscape</option>
       <option value="#pano">Panorama</option>
       <option value="#portrait">Portrait</option>

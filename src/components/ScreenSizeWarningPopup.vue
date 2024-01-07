@@ -61,8 +61,14 @@ export default {
 
   animation: popupdisappear 8s forwards;
 }
+
+p {
+  display: flex;
+  font-size: small;
+}
 img {
-  width: 40%;
+  display: flex;
+  width: 10%;
 }
 @keyframes popupdisappear {
   0% {

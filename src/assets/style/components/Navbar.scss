@@ -21,6 +21,9 @@
   text-align: center;
   line-height: 300%;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   &:hover {
     background-color: gray;
     box-shadow: inset 0px 5px 12px white;
@@ -30,4 +33,16 @@
 .Navbar a {
   text-decoration: none;
   color: black;
+}
+
+@media screen and (max-width: 550px) {
+  .Navbar a {
+    font-size: x-small;
+  }
+  .Navbar button {
+    font-size: x-small;
+  }
+  .Navbar select {
+    font-size: x-small;
+  }
 }

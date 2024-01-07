@@ -57,7 +57,7 @@ export default {};
   padding-right: 30px;
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 70%;
   margin-bottom: 20px;
 }
 .product-example h2 {
