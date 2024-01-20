@@ -5,6 +5,7 @@
       v-for="(image, index) in images"
       :key="index"
       @click="openFullViewer(image)"
+      v-add-lazy-loading
     >
       <img :src="image.url" alt="Image" />
       <p class="Title titlefont">{{ image.title }}</p>
@@ -22,6 +23,21 @@ export default {
   methods: {
     openFullViewer(image) {
       this.$emit("open-fullviewer", image);
+    },
+  },
+  directives: {
+    "add-lazy-loading": {
+      inserted(el) {
+        // Check if the parent div has a specific class
+        if (
+          el.classList.contains("portrait") ||
+          el.classList.contains("pano")
+        ) {
+          // Add the loading="lazy" attribute to the child img element
+          const img = el.querySelector("img");
+          img.setAttribute("loading", "lazy");
+        }
+      },
     },
   },
 };
