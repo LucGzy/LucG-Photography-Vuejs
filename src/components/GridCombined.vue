@@ -73,7 +73,7 @@ export default {
         // for build use this :
         .get("./imggrid.json")
         // for dev use this :
-        //.get("/imggrid.json")
+        // .get("/imggrid.json")
         .then((response) => {
           this.grid1Images = response.data; // Update grid1Images
         })

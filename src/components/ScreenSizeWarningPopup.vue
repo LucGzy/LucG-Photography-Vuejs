@@ -39,7 +39,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .screen-size-warning-popup {
   display: inline-block;
   position: fixed;
